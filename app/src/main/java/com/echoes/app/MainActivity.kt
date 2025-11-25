@@ -77,6 +77,8 @@ class MainActivity : AppCompatActivity() {
         webSettings.javaScriptEnabled = true // 启用 JS，现代 Web App 必须
         webSettings.domStorageEnabled = true // 启用本地存储 (localStorage)，很多 App 需要
         webSettings.cacheMode = WebSettings.LOAD_DEFAULT // 开启缓存
+        val defaultUA = webSettings.userAgentString
+        webSettings.userAgentString = "$defaultUA EchoesApp/1.0"
 
         // 缩放设置（可选，视你的 Web App 是否适配移动端而定）
         webSettings.loadWithOverviewMode = true
